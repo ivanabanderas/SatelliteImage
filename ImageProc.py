@@ -3,16 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pytesseract
 
-img = cv.imread('placa.jpg') # otra placa = placa2.jpg
+img = cv.imread('imagen.jpg') 
 assert img is not None, "file could not be read, check with os.path.exists()"
-
-hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
-
-# rango
-lower_black = np.array([0, 0, 0])
-upper_black = np.array([180, 255, 50])
-
-mask = cv.inRange(hsv, lower_black, upper_black) # mascara para mantener el negrp
 
 blur = cv.GaussianBlur(mask, (31, 31), 0)
 
