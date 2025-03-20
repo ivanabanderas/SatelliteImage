@@ -25,7 +25,7 @@ if lines is not None:
 # mostrar
 plt.figure(figsize=(8, 8)) #tamaño de la figura
 
-plt.imshow(cv.cvtColor(filtered_lines_img, cv.COLOR_BGR2RGB)) #convierte el formato de opencv a matplotlib
+plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB)) #convierte el formato de opencv a matplotlib
 plt.title("Líneas Filtradas de las Calles")  #título de la figura
 plt.axis("off")  #para no dibujar los axis 
 plt.show()   #muestra la figura
