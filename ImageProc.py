@@ -17,11 +17,10 @@ _, thresh = cv.threshold(blur, 30, 255, cv.THRESH_BINARY_INV)  #treshold para re
 # dibujo
 #trasnformada de houghes para detectar lineas en la imegen 
 lines = cv.HoughLinesP(thresh, 1, np.pi / 180, threshold=200, minLineLength=100, maxLineGap=20) #treshold: es el número de interscecciones necesarias, min para ser detectada, max separación permitdida para ser considerada línea
-filtered_lines_img = img.copy() #crea una copia para mostrar la imagen
 if lines is not None:
     for line in lines:
         x1, y1, x2, y2 = line[0] #extrae las coordenadas
-        cv.line(filtered_lines_img, (x1, y1), (x2, y2), (128, 0, 255), 2)  #las dibuja sobre la copia en color rosa
+        cv.line(img, (x1, y1), (x2, y2), (128, 0, 255), 2)  #las dibuja sobre la copia en color rosa
 
 # mostrar
 plt.figure(figsize=(8, 8)) #tamaño de la figura
